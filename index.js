@@ -3,17 +3,18 @@ var plugins = require('./exports.js');
 var cache = {};
 
 // OPTION 1: Configure AWS credentials through hard-coded key and secret
-// var AWSConfig = {
-//     accessKeyId: '',
-//     secretAccessKey: '',
-//     sessionToken: '',
-//     region: 'us-east-1'
-// };
+ var AWSConfig = {
+     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+     sessionToken: process.env.AWS_SESSION_TOKEN,
+     region: process.env.AWS_DEFAULT_REGION
+ };
 
 // OPTION 2: Import an AWS config file containing credentials
 // var AWSConfig = require(__dirname + '/credentials.json');
 
 // OPTION 3: Set AWS credentials in environment variables
+
 
 console.log('CATEGORY\tPLUGIN\t\t\t\tRESOURCE\t\t\tREGION\t\tSTATUS\tMESSAGE');
 
